@@ -1,0 +1,101 @@
+@use 'base/mixins' as mx;
+@use 'base/variables' as v;
+
+.testimoniales-blog {
+    margin-top: v.$separacion;
+    @include mx.desktop { 
+        @include mx.grid(3, 4.2rem);
+    }
+
+    &__blog {
+        @include mx.desktop { 
+            grid-column: 2 / 4;
+        }
+    }
+
+    &__heading {
+        @include mx.heading(true);
+    }
+}
+
+.testimonial {
+    text-align: center;
+    &__imagen {
+        width: 22rem;
+        margin: 0 auto;
+    }
+
+    &__contenido {
+        background-color: v.$blanco;
+        margin-top: -11rem;
+        padding: 11rem 2.2rem 2.2rem 2.2rem;
+    }
+
+    &__nombre {
+        font-size: 2.6rem;
+        font-weight: 700;
+    }
+
+    &__texto {
+        font-size: 1.8rem;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            background-image: url(../img/quote.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 1rem;
+            width: 3.6rem;
+            height: 3.6rem;
+        }
+    }
+}
+
+.entrada {
+    background-color: v.$blanco;
+    margin-bottom: 2.2rem;
+    
+    @include mx.tablet { 
+        @include mx.grid(5, 2.2rem);
+        align-items: center;
+    }
+
+    &__imagen-contenedor {
+        @include mx.tablet { 
+            grid-column: 1 / 3;
+        }
+    }
+
+    &__imagen {
+        height: 32rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__contenido {
+        padding: 1.2rem;
+
+        @include mx.tablet { 
+            grid-column: 3 / 6;
+        }
+    }
+
+    &__meta {
+        font-size: 1.4rem;
+    }
+
+    &__enlace {
+        @include mx.boton(v.$primario, v.$blanco, v.$negro);
+        text-transform: uppercase;
+        margin-top: 1.4rem;
+        font-weight: 700;
+       display: block;
+       text-align: center;
+       padding: 1rem 1.6rem;
+       font-size: 1.4rem;
+       @include mx.tablet { 
+        display: inline-block;
+       }
+    }
+}

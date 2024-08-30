@@ -1,0 +1,125 @@
+@use 'base/mixins' as mx;
+@use 'base/variables' as v;
+
+.header {
+    background-position: center;
+    background-size: cover;
+    padding: 3.2rem 0;
+    position: relative;
+
+    @include mx.tablet { 
+        padding: 3.2rem 0 22.2rem 0;
+    }
+
+    &__barra {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include mx.tablet { 
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        width: 28rem;
+        margin-bottom: v.$separacion;
+
+        @include mx.tablet { 
+            width: 22rem;
+            margin-bottom: 0;
+        }
+    }
+
+    &__contenido {
+        @include mx.desktop { 
+            margin-top: 10.5rem;
+        }
+
+        @include mx.tablet { 
+            margin-top: 8.2rem;
+            max-width: 50rem;
+        }
+    }
+
+    &__heading {
+        color: darken(v.$blanco, 13.5%);
+        text-align: center;
+
+        @include mx.tablet { 
+            text-align: left;
+        }
+    }
+
+    &__texto {
+        color: v.$blanco;
+        display: none;
+       
+        @include mx.tablet { 
+            display: block;
+        }
+    }
+    &__imagen {
+        display: none;
+
+        @include mx.tablet { 
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -5rem;
+            max-width: 40rem;
+            border-top-left-radius: 2.2rem;
+            border-bottom-left-radius: 5.2rem;
+            box-shadow: 0px 7px 16px -3px rgba(0,0,0,0.61);
+            -webkit-box-shadow: 0px 7px 16px -3px rgba(0,0,0,0.61);
+            -moz-box-shadow: 0px 7px 16px -3px rgba(0,0,0,0.61);
+        }
+
+        @include mx.desktopXL { 
+            max-width: 65.5rem;
+        }
+    }
+}
+
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mx.tablet { 
+        flex-direction: row;
+        gap: 1.8rem;
+    }
+    @include mx.desktop { 
+        gap: 2.2rem;
+    }
+
+    &__link {
+        color: v.$blanco;
+        font-size: 2rem;
+        margin-bottom: 1.8rem;
+        transition-property: transform;
+        transition-duration: .3s;
+
+        @include mx.tablet { 
+            font-size: 1.6rem;
+        }
+
+        @include mx.desktop { 
+            font-size: 2.2rem;
+        }
+
+        &:hover {
+            color: darken(v.$blanco, 16%);
+            transform: scale(1.08);
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        @include mx.tablet { 
+            margin-bottom: 0;
+        }
+    }
+}

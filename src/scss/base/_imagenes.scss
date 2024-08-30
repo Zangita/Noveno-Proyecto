@@ -1,0 +1,46 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mx;
+
+/* Imagen header */
+.notavif.notwebp .header  {
+    background-image: linear-gradient(to right, transparentize(v.$primario, .3) 0%, transparentize(v.$primario, .3) 100%), url(../img/header_bg.jpg);
+}
+
+.avif .header{
+    background-image: linear-gradient(to right, transparentize(v.$primario, .3) 0%, transparentize(v.$primario, .3) 100%), url(../img/header_bg.avif);
+}
+
+.webp .header{
+    background-image: linear-gradient(to right, transparentize(v.$primario, .3) 0%, transparentize(v.$primario, .3) 100%), url(../img/header_bg.webp);
+}
+
+
+.notavif.notwebp .destacada{
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, v.$primario 50%, v.$primario 100%),url(../img/destacada.jpg);
+}
+
+.webp .destacada{
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, v.$primario 50%, v.$primario 100%),url(../img/destacada.webp);
+}
+
+.avif .destacada{
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, v.$primario 50%, v.$primario 100%),url(../img/destacada.avif);
+}
+
+@include mx.tablet { 
+    .notavif.notwebp .destacada{
+        background-image: linear-gradient(to right, transparent 0%, transparent 50%, v.$primario 50%, v.$primario 100%),url(../img/destacada.jpg);
+    }
+    
+    .webp .destacada{
+        background-image: linear-gradient(to right, transparent 0%, transparent 50%, v.$primario 50%, v.$primario 100%),url(../img/destacada.webp);
+    }
+    
+    .avif .destacada{
+        background-image: linear-gradient(to right, transparent 0%, transparent 50%, v.$primario 50%, v.$primario 100%),url(../img/destacada.avif);
+    }
+}
+
+
+
+
